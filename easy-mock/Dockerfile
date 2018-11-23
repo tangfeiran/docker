@@ -13,7 +13,7 @@ WORKDIR /
 
 ARG registry=https://registry.npm.taobao.org
 ARG source=https://github.com/easy-mock/easy-mock/archive/v${EASY_MOCK_VERSION}.zip
-
+COPY sources.list /etc/apt/
 RUN apt-get update && \
 	apt-get install unzip && \
 	wget -c ${source} -O easy-mock.zip && \
